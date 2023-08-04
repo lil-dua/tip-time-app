@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/icon_store"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/ic_store"
+        app:layout_constraintTop_toTopOf="@id/text_field"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/text_field"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_field"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:hint="@string/cost_of_service"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/icon_store">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_cost"
+            android:textSize="16sp"
+            android:inputType="numberDecimal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <ImageView
+        android:id="@+id/icon_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/ic_service"
+        app:layout_constraintTop_toTopOf="@id/text_tip_options"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/text_tip_options"/>
+
+    <TextView
+        android:id="@+id/text_tip_options"
+        android:text="@string/how_was_the_service"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/icon_service"
+        app:layout_constraintTop_toBottomOf="@+id/text_field"/>
+
+    <RadioGroup
+        android:id="@+id/radio_group_options"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/radio_amazing"
+        app:layout_constraintTop_toBottomOf="@id/text_tip_options"
+        app:layout_constraintStart_toStartOf="@id/text_tip_options">
+        <RadioButton
+            android:id="@+id/radio_amazing"
+            android:text="@string/amazing_20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/edit_cost"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <RadioButton
+            android:id="@+id/radio_good"
+            android:text="@string/good_18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/radio_amazing"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <RadioButton
+            android:id="@+id/radio_okay"
+            android:text="@string/okay_15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/radio_good"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+
+
+    </RadioGroup>
+
+
+    <ImageView
+        android:id="@+id/icon_round_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/ic_round_up"
+        app:layout_constraintTop_toTopOf="@id/text_round_up"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/text_round_up"/>
+
+    <TextView
+        android:id="@+id/text_round_up"
+        android:text="@string/round_up_tip"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/icon_round_up"
+        app:layout_constraintTop_toBottomOf="@+id/radio_group_options"/>
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switch_round_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/text_round_up"
+        app:layout_constraintBottom_toBottomOf="@id/text_round_up"/>
+
+    <Button
+        android:id="@+id/button_calculate"
+        android:text="@string/calculate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="@id/text_round_up"
+        app:layout_constraintEnd_toStartOf="@id/switch_round_up"
+        app:layout_constraintTop_toBottomOf="@id/text_round_up"/>
+
+    <TextView
+        android:id="@+id/tip_result"
+        android:layout_marginEnd="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_calculate"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
